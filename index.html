@@ -1,0 +1,261 @@
+<!DOCTYPE HTML><!-- Zywxn Template 4.1 --><html><head><meta charset="utf-8"><title>Zywxn Converters</title>
+<link rel="stylesheet" type="text/css" href="z41.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<style type="text/css">
+.ibutton {
+	cursor: pointer;
+}
+.ibutton:hover {
+	color: #FFF;
+	font-weight: bold;
+}
+ibutton:active {
+	color: #F60;
+}
+table input {
+	background: inherit;
+	border: 1px solid #000;
+	color: #333;
+}
+input[disabled=disabled], input:disabled {
+	cursor: not-allowed;
+}
+table input:hover, table input:focus {
+	border: 1px solid #FFF;
+	color: #FFF;
+}
+.red th, .red td, .red input {
+	background: #F00;
+	background: -webkit-linear-gradient(top,#F66,#C00);
+	background: -moz-linear-gradient(top,#F66,#C00);
+	background: -o-linear-gradient(top,#F66,#C00);
+	color: #FFF;
+}
+.red input:focus {
+	background: -webkit-linear-gradient(top,#C00,#F66);
+	background: -moz-linear-gradient(top,#C00,#F66);
+	background: -o-linear-gradient(top,#C00,#F66);
+}
+.green th, .green td, .green input {
+	background: #0F0;
+	background: -webkit-linear-gradient(top,#6F6,#0C0);
+	background: -moz-linear-gradient(top,#6F6,#0C0);
+	background: -o-linear-gradient(top,#6F6,#0C0);
+	color: #000;
+}
+.green input:focus {
+	background: -webkit-linear-gradient(top,#0C0,#6F6);
+	background: -moz-linear-gradient(top,#0C0,#6F6);
+	background: -o-linear-gradient(top,#0C0,#6F6);
+}
+.blue th, .blue td, .blue input {
+	background: #00F;
+	background: -webkit-linear-gradient(top,#66F,#00C);
+	background: -moz-linear-gradient(top,#66F,#00C);
+	background: -o-linear-gradient(top,#66F,#00C);
+	color: #FFF;
+}
+.blue input:focus {
+	background: -webkit-linear-gradient(top,#00C,#66F);
+	background: -moz-linear-gradient(top,#00C,#66F);
+	background: -o-linear-gradient(top,#00C,#66F);
+}
+.rgbbutton {
+	background: #FDB !important;
+	background: -webkit-linear-gradient(top,#FED,#FDB) !important;
+	background: -moz-linear-gradient(top,#FED,#FDB) !important;
+	background: -o-linear-gradient(top,#FED,#FDB) !important;
+}
+#key::-scrollbar, #key::-webkit-scrollbar {
+	background: #F60;
+	background: -webkit-linear-gradient(left,#F60,#C30);
+}
+.contact {
+	background: #CCC;
+	background: -webkit-linear-gradient(top,#777,#444);
+	background: -moz-linear-gradient(top,#777,#444);
+	background: -o-linear-gradient(top,#777,#444);
+	border: 1px solid #999;
+	border-radius: 4px;
+	color: #CCC;
+	font-size: inherit;
+	padding: 2px 4px;
+}
+.contact:hover {
+	background: #F60;
+	background: -webkit-linear-gradient(top,#F60,#900);
+	background: -moz-linear-gradient(top,#F60,#900);
+	background: -o-linear-gradient(top,#F60,#900);
+	text-shadow: none;
+}
+.contact:active {
+	background: #900;
+	background: -webkit-linear-gradient(top,#900,#F60);
+	background: -moz-linear-gradient(top,#900,#F60);
+	background: -o-linear-gradient(top,#900,#F60);
+	text-shadow: none;
+	box-shadow: 0 0 8px 1px #000 inset;
+}
+</style>
+<script type="text/javascript" src="hex.js"></script>
+<script type="text/javascript" src="dim.js"></script>
+<script type="text/javascript" src="music.js"></script>
+<script type="text/javascript" src="scales.js"></script>
+<script type="text/javascript" src="quad.js"></script>
+<script type="text/javascript" src="show.js"></script>
+<script type="text/javascript" src="fa.js"></script>
+</head><body><nav id="nav"><div id="navblock"></div><div id="navbevel"></div><div id="navtabbg"><h4 id="navh">Navigation</h4></div><div id="navtabbevel"></div><div id="navtab"><h4>Navigation</h4></div><div id="navbar">
+<a href="#hexconv" onClick="hexforceshow()"><p>Hex Converter</p></a>
+<a href="#dimconv" onClick="dimforceshow()"><p>Dimensions Converter</p></a>
+<a href="#musicconv" onClick="musicforceshow()"><p>Music Metadata Converter</p></a>
+<a href="#scalescomp" onClick="scalesforceshow()"><p>Scales Computer</p></a>
+<a href="#quadsolver" onClick="quadforceshow()"><p>Quadratic Solver</p></a>
+</div></nav><header id="header"><h1>Zywxn Converters</h1><!--<p>Title Caption</p>--><nav>
+<a href="#hexconv" onClick="hexforceshow()">Hex Converter</a>
+<a href="#dimconv" onClick="dimforceshow()">Dimensions Converter</a>
+<a href="#musicconv" onClick="musicforceshow()">Music Metadata Converter</a>
+<a href="#scalescomp" onClick="scalesforceshow()">Scales Computer</a>
+<a href="#quadsolver" onClick="quadforceshow()">Quadratic Solver</a>
+</nav></header><div id="body"><div id="content">
+<section id="hexconv"><header><h2>Hex Converter</h2><p class="ibutton" id="hexshowbutton" onClick="hexshow()">Show Hex Converter</p></header><article id="hexconvbox" style="display:none">
+<h3>Instructions</h3>
+<p>Input a 3-digit or 6-digit hexadecimal colour value into the input box below and click <strong>Convert from Hex to RGB</strong> to convert the hexadecimal value into decimals.</p>
+<p>Alternatively, input 3 numbers between 0 and 255 representing the three colours (red, green and blue) and click <strong>Convert from RGB to Hex</strong> to convert the decimals into the hexadecimal value.</p>
+<h3>Hex Converter</h3>
+<form><table cellspacing="0"><tbody>
+<tr><th>Hex:</th><td><input id="hex" type="text" size="20" onBlur="hexcalc()" /></td></tr>
+<tr class="red"><th>Red:</th><td><input id="red" type="number" size="3" value="0" onBlur="rgbcalc();" /></td></tr>
+<tr class="green"><th>Green:</th><td><input id="green" type="number" size="3" value="0" onBlur="rgbcalc();" /></td></tr>
+<tr class="blue"><th>Blue:</th><td><input id="blue" type="number" size="3" value="0" onBlur="rgbcalc();" /></td></tr>
+</tbody></table></form>
+<p><button id="hexbutton" type="button" onClick="hexcalc()">Convert from Hex to RGB</button>
+<button id="rgbbutton" type="button" onClick="rgbcalc()">Convert from RGB to Hex</button></p>
+<p><strong>Status: </strong><span id="hexstatus">Waiting for input</span></p>
+<p>Last Updated: 2012-04-30</p>
+</article></section><section id="dimconv"><header><h2>Dimensions Converter</h2><p class="ibutton" id="dimshowbutton" onClick="dimshow()">Show Dimensions Converter</p></header><article id="dimconvbox" style="display:none">
+<form><table cellspacing="0"><tbody><tr>
+	<th>Screen Resolution:</th>
+	<td><input id="reswidth" /></td>
+	<td>&times;</td>
+	<td><input id="resheight" /></td>
+	<td>=</td>
+	<td><input id="ressize" onfocus="rescalc()" />&nbsp;px</td>
+	<td><button id="resbutton" type="button" onclick="rescalc()">Calculate Resolution Size</button></td>
+</tr><tr>
+	<th>Screen Size (millimetres):</th>
+	<td><input id="screenwidthmm" onblur="screenwidthmmcalc()" /></td>
+	<td>&times;</td>
+	<td colspan="4"><input id="screenheightmm" onblur="screenheightmmcalc()" /></td>
+</tr><tr>
+	<th>Screen Size (inches):</th>
+	<td><input id="screenwidth"/></td>
+	<td>&times;</td>
+	<td><input id="screenheight" /></td>
+	<td>=</td>
+	<td><input id="screensize" onfocus="screencalc()" />&nbsp;in</td>
+	<td><button id="screenbutton" type="button" onclick="screencalc()">Calculate Screen Size</button></td>
+</tr><tr>
+	<th>Screen Resolution Ratio:</th>
+	<td colspan="4">&nbsp;</td>
+	<td><input id="res" onfocus="resppi()" />&nbsp;ppi</td>
+	<td><button id="resbutton" type="button" onclick="restransfer()">Transfer Resolution Below</button></td>
+</tr></tbody></table>
+<hr />
+<table cellspacing="0"><tbody><tr>
+	<th>Pixels per Inch (ppi):</th>
+	<td colspan="2"><input id="dpi" type="text" value="72" /></td>
+</tr><tr>
+	<th>Pixels (px):</th>
+	<td><input id="pixels" type="number" value="0" onblur="dimcalc(1)" /></td>
+	<td><button type="button" onclick="dimcalc(1)">Calculate from pixels</button></td>
+</tr><tr>
+	<th>Points (pt):</th>
+	<td><input id="points" type="number" value="0" onblur="dimcalc(2)" /></td>
+	<td><button type="button" onclick="dimcalc(2)">Calculate from points</button></td>
+</tr><tr>
+	<th>Millimetres (mm):</th>
+	<td><input id="millimetres" type="number" value="0" onblur="dimcalc(3)" /></td>
+	<td><button type="button" onclick="dimcalc(3)">Calculate from millimetres</button></td>
+</tr><tr>
+	<th>Inches (in):</th>
+	<td><input id="inches" type="number" value="0" onblur="dimcalc(4)" /></td>
+	<td><button type="button" onclick="dimcalc(4)">Calculate from inches</button></td>
+</tr></tbody></table></form>
+<p>Last Updated: 2012-05-01</p>
+</article></section><section id="musicconv"><header><h2>Music Metadata Converter</h2><p class="ibutton" id="musicshowbutton" onClick="musicshow()">Show Music Metadata Converter</p></header><article id="musicconvbox" style="display:none">
+<form><table cellspacing="0"><tbody><tr>
+	<th>Minutes and Seconds:</th>
+	<td><input id="min" type="text" />:<input id="sec" type="text" onblur="time(1)" /></td>
+</tr><tr>
+	<th>Total Seconds:</th>
+	<td><input id="total" type="text" onblur="time(2)" />&nbsp;s</td>
+</tr><tr>
+	<th>Bitrate:</th>
+	<td><input id="bitrate" type="text" value="320" onblur="byteratecalc()" />&nbsp;kbps</td>
+</tr><tr>
+	<th>Bitrate (bytes):</th>
+	<td><input id="byterate" type="text" value="40" onblur="bitratecalc()" />&nbsp;kBps</td>
+</tr><tr>
+	<th>Size (megabytes):</th>
+	<td><input id="size" type="text" onblur="kilobytecalc()" />&nbsp;MB</td>
+</tr><tr>
+	<th>Size (kilobytes):</th>
+	<td><input id="sizekb" type="text" onblur="megabytecalc()" />&nbsp;kB</td>
+</tr></tbody></table>
+<p><button id="calcsize" type="button" onclick="calc(1)" >Total Seconds &times; Bitrate &rarr; Size</button>
+<button id="calcrate" type="button" onclick="calc(2)" >Size &divide; Total Seconds &rarr; Bitrate</button>
+<button id="calctime" type="button" onclick="calc(3)" >Size &divide; Bitrate &rarr; Total Seconds</button></p></form>
+<p><strong>Status: </strong><span id="musicstatus">Waiting for input</span></p>
+<p>Last Updated: 2012-05-01</p>
+</article></section><section id="scalescomp"><header><h2>Scales Computer</h2><p class="ibutton" id="scalesshowbutton" onClick="scalesshow()">Show Scales Computer</p></header><article id="scalescalcbox" style="display:none">
+<form><table cellspacing="0"><tbody>
+<th rowspan="10" style="font-size:20px">Key<br /><select id="key" multiple="multiple" size="12" onchange="scalesgen()">
+	<option value="0">C</option>
+	<option value="1">C&#9839;/D&#9837;</option>
+	<option value="2">D</option>
+	<option value="3">D&#9839;/E&#9837;</option>
+	<option value="4">E</option>
+	<option value="5">F</option>
+	<option value="6">F&#9839;/G&#9837;</option>
+	<option value="7">G</option>
+	<option value="8">G&#9839;/A&#9837;</option>
+	<option value="9">A</option>
+	<option value="10">A&#9839;/B&#9837;</option>
+	<option value="11">B</option>
+</select></th>
+<tr><th>Major Scale:</th><td><input disabled="disabled" id="major" /></td><td><input disabled="disabled" id="majorb" /></td></tr>
+<tr><th>Major Arpeggios:</th><td><input disabled="disabled" id="majorp" /></td><td><input disabled="disabled" id="majorpb" /></td></tr>
+<tr><th>Minor (Harmonic) Scale:</th><td><input disabled="disabled" id="minorh" /></td><td><input disabled="disabled" id="minorhb" /></td></tr>
+<tr><th>Minor (Melodic ascending) Scale:</th><td><input disabled="disabled" id="minorma" /></td><td><input disabled="disabled" id="minormab" /></td></tr>
+<tr><th>Minor (Melodic descending) Scale:</th><td><input disabled="disabled" id="minormd" /></td><td><input disabled="disabled" id="minormdb" /></td></tr>
+<tr><th>Minor Arpeggios:</th><td><input disabled="disabled" id="minorp" /></td><td><input disabled="disabled" id="minorpb" /></td></tr>
+<tr><th>Dominant Sevenths:</th><td><input disabled="disabled" id="dom" /></td><td><input disabled="disabled" id="domb" /></td></tr>
+<tr><th>Diminished Sevenths:</th><td><input disabled="disabled" id="dim" /></td><td><input disabled="disabled" id="dimb" /></td></tr>
+<tr><th>Whole Tone:</th><td><input disabled="disabled" id="tone" /></td><td><input disabled="disabled" id="toneb" /></td></tr>
+</tbody></table></td></form>
+<p><strong>Status: </strong><span id="scalesstatus">Waiting for input</span></p>
+<p>Last Updated: 2012-04-01</p>
+</article></section><section id="quadsolver"><header><h2>Quadratic Solver</h2><p class="ibutton" id="quadshowbutton" onClick="quadshow()">Show Quadratic Solver</p></header><article id="quadsolverbox" style="display:none">
+<h3>Coefficients</h3>
+<form><table cellspacing="0"><tbody><tr>
+	<th>Quadratic Coefficient (x<sup>2</sup>)</th>
+	<td><input id="quad" type="number" /></td>
+</tr><tr>
+	<th>Linear Coefficient (x<sup>1</sup>)</th>
+	<td><input id="linear" type="number" /></td>
+</tr><tr>
+	<th>Constant (x<sup>0</sup>)</th>
+	<td><input id="constant" type="number" /></td>
+</tr></tbody></table></form>
+<p><button type="button" onclick="solve()">Find roots for the polynomial</button></p>
+<h3>Results</h3>
+<p><strong>Status: </strong><span id="roots">Waiting for input</span></p>
+<p>Last Updated: 2012-05-01</p>
+</article></section></div></div><footer id="footer">
+<p>Zywxn (X)HTML Template 4.1 
+<span class="pyro"><span class="pyro-p">P</span><span class="pyro-y">y</span><span class="pyro-r1">r</span><span class="pyro-o1">o</span><span class="pyro-c">C</span><span class="pyro-a">a</span><span class="pyro-r2">r</span><span class="pyro-b">b</span><span class="pyro-o2">o</span><span class="pyro-n">n</span></span>
+| Last Updated: 2012-04-27 | Recommended browser: <span class="ft-f"><a href="http://www.mozilla.com/en-GB/firefox/all.html">Mozilla Firefox 4+</a></span></p>
+<p>Tested successfully in <span class="ft-s">Apple Safari 5</span> <span class="ft-c">Google Chrome 10+</span> <span class="ft-i">Internet Explorer 9</span> <span class="ft-f">Mozilla Firefox 4+</span> <span class="ft-o">Opera 11+</span></p>
+<p>For enquiries, feedback or suggestions about this website, please email <a class="contact" href="mailto:11fungrv1@kgv.hk">11fungrv1@kgv.hk</a> or contact <b>OSSSTIRS</b> directly, and we'll get back to you as soon as we can.</p>
+</footer></body></html>
