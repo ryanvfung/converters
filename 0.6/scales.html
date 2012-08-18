@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Zywxn Scales Calculator</title>
+<link rel="stylesheet" type="text/css" href="css.css"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style type="text/css">
+input {
+	text-align: center;
+}
+</style><script>
+function scales() {
+	var n = ["C ","C♯","D ","D♯","E ","F ","F♯","G ","G♯","A ","A♯","B ","C ","C♯","D ","D♯","E ","F ","F♯","G ","G♯","A ","A♯","B ","C ","C♯","D ","D♯","E ","F ","F♯","G ","G♯","A ","A♯","B "]
+	var b = ["C ","D♭","D ","E♭","E ","F ","G♭","G ","A♭","A ","B♭","B ","C ","D♭","D ","E♭","E ","F ","G♭","G ","A♭","A ","B♭","B ","C ","D♭","D ","E♭","E ","F ","G♭","G ","A♭","A ","B♭","B "]
+	var g = "   ";
+	var k = document.getElementById("key").value * 1;
+	var major = document.getElementById("major");
+	var majorb = document.getElementById("majorb");
+	var majorp = document.getElementById("majorp");
+	var majorpb = document.getElementById("majorpb");
+	var minorh = document.getElementById("minorh");
+	var minorhb = document.getElementById("minorhb");
+	var minorma = document.getElementById("minorma");
+	var minormab = document.getElementById("minormab");
+	var minormd = document.getElementById("minormd");
+	var minormdb = document.getElementById("minormdb");
+	var minorp = document.getElementById("minorp");
+	var minorpb = document.getElementById("minorpb");
+	var dom = document.getElementById("dom");
+	var domb = document.getElementById("domb");
+	var dim = document.getElementById("dim");
+	var dimb = document.getElementById("dimb");
+	var tone = document.getElementById("tone");
+	var toneb = document.getElementById("toneb");
+	major.value = n[k]+g+n[k+2]+g+n[k+4]+g+n[k+5]+g+n[k+7]+g+n[k+9]+g+n[k+11];
+	majorb.value = b[k]+g+b[k+2]+g+b[k+4]+g+b[k+5]+g+b[k+7]+g+b[k+9]+g+b[k+11];
+	majorp.value = n[k]+g+n[k+4]+g+n[k+7];
+	majorpb.value = b[k]+g+b[k+4]+g+b[k+7];
+	minorh.value = n[k]+g+n[k+2]+g+n[k+3]+g+n[k+5]+g+n[k+7]+g+n[k+8]+g+n[k+11];
+	minorhb.value = b[k]+g+b[k+2]+g+b[k+3]+g+b[k+5]+g+b[k+7]+g+b[k+8]+g+b[k+11];
+	minorma.value = n[k]+g+n[k+2]+g+n[k+3]+g+n[k+5]+g+n[k+7]+g+n[k+9]+g+n[k+11];
+	minormab.value = b[k]+g+b[k+2]+g+b[k+3]+g+b[k+5]+g+b[k+7]+g+b[k+9]+g+b[k+11];
+	minormd.value = n[k+10]+g+n[k+8]+g+n[k+7]+g+n[k+5]+g+n[k+3]+g+n[k+2]+g+n[k];
+	minormdb.value = b[k+10]+g+b[k+8]+g+b[k+7]+g+b[k+5]+g+b[k+3]+g+b[k+2]+g+b[k];
+	minorp.value = n[k]+g+n[k+3]+g+n[k+7];
+	minorpb.value = b[k]+g+b[k+3]+g+b[k+7];
+	dom.value = n[k+7]+g+n[k+11]+g+n[k+14]+g+n[k+17];
+	domb.value = b[k+7]+g+b[k+11]+g+b[k+14]+g+b[k+17];
+	dim.value = n[k]+g+n[k+3]+g+n[k+6]+g+n[k+9];
+	dimb.value = b[k]+g+b[k+3]+g+b[k+6]+g+b[k+9];
+	tone.value = n[k]+g+n[k+2]+g+n[k+4]+g+n[k+6]+g+n[k+8]+g+n[k+10];
+	toneb.value = b[k]+g+b[k+2]+g+b[k+4]+g+b[k+6]+g+b[k+8]+g+b[k+10];
+}
+</script>
+</head><body>
+<h1>Zywxn Scales Calculator</h1>
+<p>Version 0.1 beta</p>
+<form><table><tbody>
+<td rowspan="10">Key<br /><select id="key" multiple="multiple" size="12" onchange="scales()">
+	<option value="0">C</option>
+	<option value="1">C&#9839;/D&#9837;</option>
+	<option value="2">D</option>
+	<option value="3">D&#9839;/E&#9837;</option>
+	<option value="4">E</option>
+	<option value="5">F</option>
+	<option value="6">F&#9839;/G&#9837;</option>
+	<option value="7">G</option>
+	<option value="8">G&#9839;/A&#9837;</option>
+	<option value="9">A</option>
+	<option value="10">A&#9839;/B&#9837;</option>
+	<option value="11">B</option>
+</select></td>
+<tr><td>Major Scale:</td><td><input disabled="disabled" id="major" /></td><td><input disabled="disabled" id="majorb" /></td></tr>
+<tr><td>Major Arpeggios:</td><td><input disabled="disabled" id="majorp" /></td><td><input disabled="disabled" id="majorpb" /></td></tr>
+<tr><td>Minor (Harmonic) Scale:</td><td><input disabled="disabled" id="minorh" /></td><td><input disabled="disabled" id="minorhb" /></td></tr>
+<tr><td>Minor (Melodic ascending) Scale:</td><td><input disabled="disabled" id="minorma" /></td><td><input disabled="disabled" id="minormab" /></td></tr>
+<tr><td>Minor (Melodic descending) Scale:</td><td><input disabled="disabled" id="minormd" /></td><td><input disabled="disabled" id="minormdb" /></td></tr>
+<tr><td>Minor Arpeggios:</td><td><input disabled="disabled" id="minorp" /></td><td><input disabled="disabled" id="minorpb" /></td></tr>
+<tr><td>Dominant Sevenths:</td><td><input disabled="disabled" id="dom" /></td><td><input disabled="disabled" id="domb" /></td></tr>
+<tr><td>Diminished Sevenths:</td><td><input disabled="disabled" id="dim" /></td><td><input disabled="disabled" id="dimb" /></td></tr>
+<tr><td>Whole Tone:</td><td><input disabled="disabled" id="tone" /></td><td><input disabled="disabled" id="toneb" /></td></tr>
+</tbody></table></td>
+</body></html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Zywxn Polynomial Solver</title>
+<link rel="stylesheet" type="text/css" href="css.css"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script src="polynomial.js"></script>
+<style type="text/css">
+textarea {
+	font-family: Consolas;
+}
+#roots {
+	width: 500px;
+}
+</style>
+</head><body>
+<h1>Zywxn Polynomial Solver</h1>
+<p>Version 0.1 beta</p>
+<form><table><tbody><tr>
+	<td>Cubic Coefficient (x<sup>3</sup>)</td>
+	<td><input id="cubic" type="number" /></td>
+</tr><tr>
+	<td>Quadratic Coefficient (x<sup>2</sup>)</td>
+	<td><input id="quad" type="number" /></td>
+</tr><tr>
+	<td>Linear Coefficient (x<sup>1</sup>)</td>
+	<td><input id="linear" type="number" /></td>
+</tr><tr>
+	<td>Constant (x<sup>0</sup>)</td>
+	<td><input id="constant" type="number" /></td>
+</tr><tr>
+	<td colspan="2"><button type="button" onclick="solve()">Find roots for the polynomial</button></td>
+</tr><tr>
+	<td colspan="2">Roots:<br /><textarea id="roots" readonly="readonly"></textarea></td>
+</tr></tbody></table></form>
+</body></html>

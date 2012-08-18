@@ -1,0 +1,18 @@
+Zywxn's Hexadecimal Colour Converter - Log
+
+2011-06-20 v0.1b
+	First Hex Converter
+
+2011-06-21 v0.2b
+	Conversion to Zywxn HTML Template 3.x (PyroCarbon) styles
+
+2011-10-10 v0.3b
+	DocType conversion from XHTML 1.0 Transitional to XHTML+MathML+SVG
+	Added validation for 6 and 3 digit hex
+
+2012-02-10 v0.4b
+	Added support for 6 and 3 digit hexadecimal numbers with a hash (#) tag
+	Calculates hex values when the input box is blurred
+	Autofocusses to input box
+	Fixed the colour of the results
+	Vertically centred content

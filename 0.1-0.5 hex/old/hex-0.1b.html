@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Zywxn's Hex Converter</title>
+<style type="text/css">
+body{background:#333;color:#CCC;font-family:Frutiger,"Myriad Pro","Segoe UI",Calibri,Tahoma,Verdana,sans-serif;font-size:10pt;}
+input{color:inherit;font-family:Frutiger,"Myriad Pro","Segoe UI",Calibri,Tahoma,Verdana,sans-serif;}
+#hexinput{background:#666;border:none;padding:0 2px;text-align:center;}
+#calc{background:#000;border:none;border-radius:10px;color:#F60;cursor:pointer;font-family:Frutiger,"Myriad Pro","Segoe UI",Calibri,Tahoma,Verdana,sans-serif;}
+#calc:hover{background:#666;}
+#calc:active{background:#F60;color:#333;}
+.results{border:none;background:inherit;color:inherit;}
+.status{border:none;background:#333;}
+.r{background:#F00;color:#000;padding:0 5px;}
+.g{background:#0F0;color:#000;padding:0 5px;}
+.b{background:#00F;color:#FFF;padding:0 5px;}
+</style>
+</head><body>
+<h1>Zywxn's Hexadecimal Colour Converter</h1>
+<p>Version 0.1 beta</p>
+<h2>Instructions</h2>
+<p>Input a 3-digit or 6-digit hexadecimal colour value into the input box below and click <strong>Calculate</strong> to convert the hexadecimal value into decimals.</p>
+<form id="hexform">
+	<input id="hexinput" type="text" size="6" />
+	<button id="calc" type="button" onclick="hex();">Calculate</button>
+</form>
+<h2>Results</h2>
+<form id="form2">
+  <p class="r">Red: <input id="red" class="results" disabled="disabled" /></p>
+  <p class="g">Green: <input id="green" class="results" disabled="disabled" /></p>
+  <p class="b">Blue: <input id="blue" class="results" disabled="disabled" /></p>
+	<p class="status">Status: <input id="statusmsg" class="status" disabled="disabled" size="50" value="Waiting for input" /></p>
+</form>
+<script>
+function hex() {
+	// document.results.write('hex function executed');
+	// alert('hex function executed');
+	var hex = hexform.hexinput.value;
+	if (hex.length == 6) {
+		// var red = parseInt('0x' + hex.substring(0,2));
+		// var green = parseInt('0x' + hex.substring(2,4));
+		// var blue = parseInt('0x' + hex.substring(4,6));
+		// results.value = 'Red: ' + red + '\nGreen: ' + green + '\nBlue: ' + blue + '\n';
+		red.value = parseInt('0x' + hex.substring(0,2));
+		green.value = parseInt('0x' + hex.substring(2,4));
+		blue.value = parseInt('0x' + hex.substring(4,6));
+		statusmsg.value = 'Processed 6-digit hex RGB value';
+	}
+	else if (hex.length == 3) {
+		// var red = parseInt('0x' + hex.substring(0,2));
+		// var green = parseInt('0x' + hex.substring(2,4));
+		// var blue = parseInt('0x' + hex.substring(4,6));
+		// results.value = 'Red: ' + red + '\nGreen: ' + green + '\nBlue: ' + blue + '\n';
+		red.value = 17 * parseInt('0x' + hex.substring(0,1));
+		green.value = 17 * parseInt('0x' + hex.substring(1,2));
+		blue.value = 17 * parseInt('0x' + hex.substring(2,3));
+		statusmsg.value = 'Processed 3-digit hex RGB value';
+	}
+	else statusmsg.value = 'Invalid or unrecognised input';
+	}
+</script>
+</body></html>

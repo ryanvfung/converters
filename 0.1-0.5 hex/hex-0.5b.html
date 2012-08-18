@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Zywxn's Hex Converter 0.5</title>
+<link href="hex.css" rel="stylesheet" type="text/css" />
+<script>
+window.onload = function(){
+	document.getElementById("content").style.marginTop = ((window.innerHeight / 2) - 130) + "px";
+	var red = document.getElementById("red");
+	var green = document.getElementById("green");
+	var blue = document.getElementById("blue");
+	red = "0";
+	green = "0";
+	blue = "0";
+}
+window.onresize = function(){
+	document.getElementById("content").style.marginTop = ((window.innerHeight / 2) - 130) + "px";
+}
+function hex() {
+	var hex = document.getElementById("hexinput").value;
+	var red = document.getElementById("red");
+	var green = document.getElementById("green");
+	var blue = document.getElementById("blue");
+	var redtemp = 0;
+	var greentemp = 0;
+	var bluetemp = 0;
+	var status = document.getElementById("status");
+	var invalid = 0;
+	if (hex.length == 0) {
+		status.value = "Waiting for input";
+	} else if (hex.length == 6) {
+		redtemp = parseInt("0x" + hex.substring(0,2));
+		greentemp = parseInt("0x" + hex.substring(2,4));
+		bluetemp = parseInt("0x" + hex.substring(4,6));
+		if ( (redtemp >= 0) && (bluetemp >= 0) && (greentemp >= 0) ){
+			red.value = redtemp;
+			green.value = greentemp;
+			blue.value = bluetemp;
+			status.value = "Processed 6-digit hex RGB value";
+		} else {
+			red.value = " ";
+			green.value = " ";
+			blue.value = " ";
+			status.value = "Invalid or unrecognised input";
+		}
+	} else if ((hex.length == 7) && (hex.substring(0,1)=="#")) {
+		redtemp = parseInt("0x" + hex.substring(1,3));
+		greentemp = parseInt("0x" + hex.substring(3,5));
+		bluetemp = parseInt("0x" + hex.substring(5,7));
+		if ( (redtemp >= 0) && (bluetemp >= 0) && (greentemp >= 0) ){
+			red.value = redtemp;
+			green.value = greentemp;
+			blue.value = bluetemp;
+			status.value = "Processed 6-digit hex RGB value with hash";
+		} else {
+			red.value = " ";
+			green.value = " ";
+			blue.value = " ";
+			status.value = "Invalid or unrecognised input";	
+		}
+	} else if (hex.length == 3) {
+		redtemp = 17 * parseInt("0x" + hex.substring(0,1));
+		greentemp = 17 * parseInt("0x" + hex.substring(1,2));
+		bluetemp = 17 * parseInt("0x" + hex.substring(2,3));
+		status.value = "Processed 3-digit hex RGB value";
+		if ( (redtemp >= 0) && (bluetemp >= 0) && (greentemp >= 0) ){
+			red.value = redtemp;
+			green.value = greentemp;
+			blue.value = bluetemp;
+			status.value = "Processed 3-digit hex RGB value";
+		} else {
+			red.value = " ";
+			green.value = " ";
+			blue.value = " ";
+			status.value = "Invalid or unrecognised input";
+		}
+	} else if ((hex.length == 4) && (hex.substring(0,1)=="#")) {
+		redtemp = 17 * parseInt("0x" + hex.substring(1,2));
+		greentemp = 17 * parseInt("0x" + hex.substring(2,3));
+		bluetemp = 17 * parseInt("0x" + hex.substring(3,4));
+		status.value = "Processed 3-digit hex RGB value";
+		if ( (redtemp >= 0) && (bluetemp >= 0) && (greentemp >= 0) ){
+			red.value = redtemp;
+			green.value = greentemp;
+			blue.value = bluetemp;
+			status.value = "Processed 3-digit hex RGB value with hash";
+		} else {
+			red.value = " ";
+			green.value = " ";
+			blue.value = " ";
+			status.value = "Invalid or unrecognised input";
+		}
+	}
+	else status.value = "Invalid or unrecognised input";
+}
+function dec() {
+	var hex = document.getElementById("hexinput").value;
+	var red = document.getElementById("red");
+	var green = document.getElementById("green");
+	var blue = document.getElementById("blue");
+	var redtemp = 0;
+	var greentemp = 0;
+	var bluetemp = 0;
+}
+</script>
+</head><body>
+<table id="content" align="center"><tbody><tr><td>
+<h1>Zywxn's Hexadecimal Colour Converter</h1>
+<p>Version 0.5 beta</p>
+<div id="container">
+<table><tr><td width="420px">
+<h2>Instructions</h2>
+<p>Input a 3-digit or 6-digit hexadecimal colour value into the input box below and click <strong>Calculate</strong> to convert the hexadecimal value into decimals.</p>
+<form id="hexform">
+	<input id="hexinput" type="text" size="10" onblur="hex();" autofocus="autofocus" />
+	<button id="calc" type="button" onclick="hex();">Calculate</button>
+</form>
+</td><td width="420px">
+<h2>Results</h2>
+<form id="resultsform">
+<table align="center" cellspacing="0" cellpadding="0" width="100px">
+<tr><td><p class="rl">Red:</p></td><td><p class="rr"><input id="red" class="rr" size="3" /></p></td></tr>
+<tr><td><p class="gl">Green:</p></td><td><p class="gr"><input id="green" class="gr" size="3" /></p></td></tr>
+<tr><td><p class="bl">Blue:</p></td><td><p class="br"><input id="blue" class="br" size="3" /></p></td></tr>
+</table>
+<p>Status: <input id="status" class="status" disabled="disabled" size="40" value="Waiting for input" /></p>
+</form>
+</td></tr></table>
+</div></td></tr></tbody></table>
+</body></html>

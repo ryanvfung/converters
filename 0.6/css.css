@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	font-family: "Open Sans", "Segoe UI", Calibri, Tahoma, sans-serif;
+	outline: 0;
+}
+::-moz-selection, ::selection {
+	background: #F93;
+	color: #FFF;
+	opacity: 1;
+}
+body {
+	background: #333;
+	color: #FFF;
+	font-size: 12px;
+	margin: 5px;
+}
+fieldset {
+	background: #333
+		-webkit-gradient(linear,left top,left bottom,from(#444),to(#222));
+	border: 2px solid #F60;
+	margin-top: 10px;
+}
+legend {
+	background: #333
+		-webkit-gradient(linear,left top,left bottom,from(#222),to(#444));
+	border: 2px solid #F60;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+input, select, textarea {
+	background: #666
+		-webkit-gradient(linear,left top,left bottom,from(#333),to(#666));
+	border: 1px solid #FFF;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #FFF;
+	padding: 2px;
+	font-family: inherit;
+}
+input:hover, select:hover, textarea:hover {
+	background: #999
+		-webkit-gradient(linear,left top,left bottom,from(#666),to(#999));
+}
+input:focus, select:focus, textarea:focus {
+	background: #F60
+		-webkit-gradient(linear,left top,left bottom,from(#900),to(#F60));
+	border: 1px solid #F60;
+}
+option.selected {
+	background: #900;
+	color: #0F0;
+}
+button {
+	background: #777
+		-webkit-gradient(linear,left top,left bottom,from(#777),to(#444));
+	border: 1px solid #999;
+	border:  none;
+	border-radius: 3px;
+	color: #CCC;
+	font-family: inherit;
+	padding: 2px 4px;
+}
+button:hover {
+	background: #F60
+		-webkit-gradient(linear,left top,left bottom,from(#F60),to(#900));
+}
+button:active {
+	background: #900
+		-webkit-gradient(linear,left top,left bottom,from(#900),to(#F60));
+	box-shadow: 0 0 8px 1px #000 inset;
+}
+
+/* Spry start */
+.TabbedPanels {
+	background: #F60
+		-webkit-gradient(linear,left top,left bottom,from(#900),to(#F60));
+}
+.TabbedPanelsTabGroup {
+	margin: 0;
+	margin-bottom: 1px;
+}
+.TabbedPanelsTab {
+	background: #666
+		-webkit-gradient(linear,left top,left bottom,from(#666),to(#999));
+	border: 0;
+	font-family: "Open Sans", "Segoe UI", Calibri, Tahoma, sans-serif;
+	font-size: 12px;
+	padding: 2px 5px;
+	margin-bottom: 1px;
+	outline: none;
+}
+.TabbedPanelsTabSelected {
+	background: #999
+		-webkit-gradient(linear,left top,left bottom,from(#999),to(#666)) !important;	
+}
+.TabbedPanelsTabHover {
+	background: #F93
+		-webkit-gradient(linear,left top,left bottom,from(#F93),to(#F60));
+}
+.TabbedPanelsTabFocused {
+	background: #F60
+		-webkit-gradient(linear,left top,left bottom,from(#F60),to(#900));
+}
+.TabbedPanelsContentGroup {
+	border: 1px solid #333;
+}
+.TabbedPanelsContent {
+	margin: 0 0 -10px;
+	padding: 0;
+}

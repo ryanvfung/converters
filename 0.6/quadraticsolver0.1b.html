@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Quadratic Solver</title>
+<script type="text/javascript">
+var solve = document.getElementById("solve");
+// solve.addEventListener("click",solveQuadratic.solve,false);
+var enableComplex = document.getElementById("enableComplex");
+// enableComplex.value = false;
+// enableComplex.addEventListener("click",invertEnableComplex,false);
+invertEnableComplex = function(){
+	if (enableComplex.value == false){enableComplex.value = true;}
+	else {enableCopmlex.value = false;}
+}
+solve.onclick = function(){
+	var a = document.getElementById("quadrat").value;
+	var b = document.getElementById("linear").value;
+	var c = document.getElementById("constant").value;
+	var solution1 = document.getElementById("solution1").value;
+	var solution2 = document.getElementById("solution2").value;
+	var solutiontype = document.getElementById("solutiontype").value;
+	var discriminant = Math.pow(b,2) - (4 * a * c);
+	if (discriminant == 0) {
+		solution1 = (-b / (2 * a));
+		solution2 = (-b / (2 * a));
+		solutiontype = "One repeated real root";
+	} else if (discriminant > 0) {
+		solution1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+		solution2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+		solutiontype = "Two real roots";
+	} else {
+		if (enableComplex.value == false) {
+			solutiontype = "No real roots";
+		} else {
+			solution1 = (-b / (2 * a)) + " + " + (Math.sqrt(-discriminant) / (2 * a)) + "i";
+			solution2 = (-b / (2 * a)) + " - " + (Math.sqrt(-discriminant) / (2 * a)) + "i";
+			solutiontype = "Two complex roots";
+		}
+	}
+}
+</script>
+</head><body>
+<h1>Quadratic Solver</h1>
+<p>Input the coefficients of quadratic equation
+<math xmlns="http://www.w3.org/1998/Math/MathML" title="ax&sup2;+bx+c=0"><mstyle displaystyle="true">
+<mi>a</mi>
+<msup>
+	<mi>x</mi>
+	<mn>2</mn>
+</msup>
+<mo>+</mo>
+<mi>b</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mo>=</mo>
+<mn>0</mn>
+</mstyle></math>
+:</p>
+<form><p>
+	<input type="number" id="quadrat" size="5" /> x&sup2; +
+	<input type="number" id="linear" size="5" /> x +
+	<input type="number" id="constant" size="5" /> = 0
+</p><p>
+	<input type="button" id="solve" value="Solve!" />
+</p><p>
+	<input type="checkbox" id="enableComplex" /> Enable complex roots
+</p></form>
+<h2>Solutions</h2>
+<form>
+x<sub>1</sub> = <input type="text" id="solution1" disabled="disabled" /><br />
+x<sub>2</sub> = <input type="text" id="solution2" disabled="disabled" /><br />
+Solution type: <input type="text" id="solutiontype" disabled="disabled" />
+</body></html>

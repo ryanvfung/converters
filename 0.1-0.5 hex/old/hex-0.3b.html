@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Zywxn's Hex Converter</title>
+<style type="text/css">
+body{background:#000;color:#CCC;font-size:12px;font-family:Frutiger,"Myriad Pro","Segoe UI",Corbel,Tahoma,Verdana,sans-serif;margin:10px;padding:0;}
+h1{color:#F00;font-size:48px;margin:0;margin-top:-10px;font-variant:small-caps;font-weight:bolder;text-align:center;}
+h2{color:#F60;font-size:32px;margin:0;margin-top:-10px;margin-bottom:3px;font-variant:small-caps;font-weight:bold;text-align:center;}
+h3{color:#F93;font-size:24px;margin:0;margin-top:-5px;font-weight:bold;}
+h4{color:#FC3;font-size:16px;margin:0;margin-bottom:2px;}
+h5{color:#FFF;font-size:12px;margin:0;font-weight:bold;}
+p{margin:0 0 5px;}
+input{color:inherit;font-family:Frutiger,"Myriad Pro","Segoe UI",Calibri,Tahoma,Verdana,sans-serif;}
+#content{margin-top:200px;text-align:center;}
+#container{background:#333;border-radius:10px;margin:auto;padding:20px;width:840px;}
+#hexform{text-align:center;}
+#hexinput{background:#666;border:none;padding:0 2px;text-align:center;}
+#calc{background:#000;border:none;border-radius:10px;color:#F60;cursor:pointer;font-family:Frutiger,"Myriad Pro","Segoe UI",Calibri,Tahoma,Verdana,sans-serif;}
+#calc:hover{background:#666;}
+#calc:active{background:#F60;color:#333;}
+.rl,.gl,.bl{border-top-left-radius:10px;border-bottom-left-radius:10px;margin:0;padding:1px 0 0;}
+.rr,.gr,.br{border:0;border-top-right-radius:10px;border-bottom-right-radius:10px;margin:0;padding:0;text-align:center;}
+.rl,.rr{background:#F00;color:#000;}
+.gl,.gr{background:#0F0;color:#000;}
+.bl,.br{background:#00F;color:#FFF;}
+#resultsform{text-align:center;}
+#resultsform p{margin:0 0 5px;width:auto;}
+#status{background:#000;color:#FFF;border:0;border-radius:10px;padding:0 5px;}
+</style>
+<script>
+function hex() {
+	var hex = document.getElementById("hexinput").value;
+	var red = document.getElementById("red");
+	var green = document.getElementById("green");
+	var blue = document.getElementById("blue");
+	var redtemp = 0;
+	var greentemp = 0;
+	var bluetemp = 0;
+	var status = document.getElementById("status");
+	var invalid = 0;
+	if (hex.length == 6) {
+		redtemp = parseInt("0x" + hex.substring(0,2));
+		greentemp = parseInt("0x" + hex.substring(2,4));
+		bluetemp = parseInt("0x" + hex.substring(4,6));
+		if ( (redtemp >= 0) && (bluetemp >= 0) && (greentemp >= 0) ){
+			red.value = redtemp;
+			green.value = greentemp;
+			blue.value = bluetemp;
+			status.value = "Processed 6-digit hex RGB value";
+		} else {
+			red.value = " ";
+			green.value = " ";
+			blue.value = " ";
+			status.value = "Invalid or unrecognised input";
+		}
+	} else if (hex.length == 3) {
+		redtemp = 17 * parseInt("0x" + hex.substring(0,1));
+		greentemp = 17 * parseInt("0x" + hex.substring(1,2));
+		bluetemp = 17 * parseInt("0x" + hex.substring(2,3));
+		status.value = "Processed 3-digit hex RGB value";
+		if ( (redtemp >= 0) && (bluetemp >= 0) && (greentemp >= 0) ){
+			red.value = redtemp;
+			green.value = greentemp;
+			blue.value = bluetemp;
+			status.value = "Processed 3-digit hex RGB value";
+		} else {
+			red.value = " ";
+			green.value = " ";
+			blue.value = " ";
+			status.value = "Invalid or unrecognised input";
+		}
+	}
+	else status.value = "Invalid or unrecognised input";
+	}
+</script>
+</head><body>
+<table id="content" align="center"><tbody><tr><td>
+<h1>Zywxn's Hexadecimal Colour Converter</h1>
+<p>Version 0.3 beta</p>
+<div id="container">
+<table><tr><td width="420px">
+<h2>Instructions</h2>
+<p>Input a 3-digit or 6-digit hexadecimal colour value into the input box below and click <strong>Calculate</strong> to convert the hexadecimal value into decimals.</p>
+<form id="hexform">
+	<input id="hexinput" type="text" size="6" />
+	<button id="calc" type="button" onclick="hex();">Calculate</button>
+</form>
+</td><td width="420px">
+<h2>Results</h2>
+<form id="resultsform">
+<table align="center" cellspacing="0" cellpadding="0" width="100px">
+<tr><td><p class="rl">Red:</p></td><td><p class="rr"><input id="red" class="rr" disabled="disabled" size="3"/></p></td></tr>
+<tr><td><p class="gl">Green:</p></td><td><p class="gr"><input id="green" class="gr" disabled="disabled" size="3" /></p></td></tr>
+<tr><td><p class="bl">Blue:</p></td><td><p class="br"><input id="blue" class="br" disabled="disabled" size="3" /></p></td></tr>
+</table>
+<p>Status: <input id="status" class="status" disabled="disabled" size="40" value="Waiting for input" /></p>
+</form>
+</td></tr></table>
+</div></td></tr></tbody></table>
+</body></html>

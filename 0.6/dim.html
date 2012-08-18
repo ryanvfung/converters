@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Zywxn Dimensions Converter</title>
+<link rel="stylesheet" type="text/css" href="css.css"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script>
+function px(){calc(1);}
+function pt(){calc(2);}
+function mm(){calc(3);}
+function inch(){calc(4);}
+function calc(type) {
+	var ppi = document.getElementById("dpi");
+	var px = document.getElementById("pixels");
+	var pt = document.getElementById("points");
+	var mm = document.getElementById("millimetres");
+	var inch = document.getElementById("inches");
+	if(type==1){inch.value = px.value / ppi.value;}
+	if(type==3){inch.value = mm.value / 25.4;}
+	px.value = inch.value * ppi.value;
+	mm.value = 25.4 * inch.value;
+}
+function rescalc() {
+	var reswidth = document.getElementById("reswidth");
+	var resheight = document.getElementById("resheight");
+	var ressize = document.getElementById("ressize");
+	ressize.value = Math.sqrt( (Math.pow(reswidth.value,2)) + (Math.pow(resheight.value,2)) );
+}
+function screenwidthmmcalc() {
+	var screenwidthmm = document.getElementById("screenwidthmm");
+	var screenwidth = document.getElementById("screenwidth");
+	screenwidth.value = screenwidthmm.value / 25.4;
+}
+function screenheightmmcalc() {
+	var screenheightmm = document.getElementById("screenheightmm");
+	var screenheight = document.getElementById("screenheight");
+	screenheight.value = screenheightmm.value / 25.4;
+}
+function screencalc() {
+	var screenwidth = document.getElementById("screenwidth");
+	var screenheight = document.getElementById("screenheight");
+	var screensize = document.getElementById("screensize");
+	screensize.value = Math.sqrt( (Math.pow(screenwidth.value,2)) + (Math.pow(screenheight.value,2)) );
+}
+function resppi() {
+	var ressize = document.getElementById("ressize");
+	var screensize = document.getElementById("screensize");
+	var res = document.getElementById("res");
+	res.value = ressize.value / screensize.value;
+}
+</script></head><body>
+<h1>Zywxn Dimensions Converter</h1>
+<p>Version 0.1 beta</p>
+<form>
+<table><tbody><tr>
+	<td>Screen Resolution:</td>
+	<td><input id="reswidth"/></td>
+	<td>&times;</td>
+	<td><input id="resheight" /></td>
+	<td>=</td>
+	<td><input id="ressize" onfocus="rescalc()" />&nbsp;px</td>
+	<td><button id="resbutton" type="button" onclick="rescalc()">Calculate Resolution Size</button></td>
+</tr><tr>
+	<td>Screen Size (millimetres):</td>
+	<td><input id="screenwidthmm" onblur="screenwidthmmcalc()" /></td>
+	<td>&times;</td>
+	<td><input id="screenheightmm" onblur="screenheightmmcalc()" /></td>
+</tr><tr>
+	<td>Screen Size (inches):</td>
+	<td><input id="screenwidth"/></td>
+	<td>&times;</td>
+	<td><input id="screenheight" /></td>
+	<td>=</td>
+	<td><input id="screensize" onfocus="screencalc()" />&nbsp;in</td>
+	<td><button id="screenbutton" type="button" onclick="screencalc()" >Calculate Screen Size</button></td>
+</tr><tr>
+	<td colspan="5">&nbsp;</td>
+	<td><input id="res" onfocus="resppi()" />&nbsp;ppi</td>
+</tr></tbody></table>
+<hr />
+<table><tbody><tr>
+	<td>Pixels per Inch (ppi):</td>
+	<td><input id="dpi" type="text" value="72" /></td>
+</tr><tr>
+	<td>Pixels (px):</td>
+	<td><input id="pixels" type="number" value="0" onblur="px()" /></td>
+	<td><button type="button" onclick="px()">Calculate from pixels</button></td>
+</tr><tr>
+	<td>Points (pt):</td>
+	<td><input id="points" type="number" value="0" onblur="pt()" /></td>
+	<td><button type="button" onclick="pt()">Calculate from points</button></td>
+</tr><tr>
+	<td>Millimetres (mm):</td>
+	<td><input id="millimetres" type="number" value="0" onblur="mm()" /></td>
+	<td><button type="button" onclick="mm()">Calculate from millimetres</button></td>
+</tr><tr>
+	<td>Inches (in):</td>
+	<td><input id="inches" type="number" value="0" onblur="inch()" /></td>
+	<td><button type="button" onclick="in()">Calculate from inches</button></td>
+</tr></tbody></table>
+</form>
+</body></html>

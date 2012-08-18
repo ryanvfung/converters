@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+
+body  {
+	background: #000;
+	color: #CCC;
+	font-size: 12px;
+	font-family: Frutiger, "Segoe UI", "Myriad Pro", Corbel, Tahoma, Verdana, sans-serif;
+	margin: 10px;
+	padding: 0;
+}
+h1 {
+	color: #F00;
+	font-size: 48px;
+	margin: 0;
+	margin-top: -10px;
+	font-variant: small-caps;
+	font-weight: bolder;
+	text-align: center;
+}
+h2 {
+	color: #F60;
+	font-size: 32px;
+	margin: 0;
+	margin-top: -10px;
+	margin-bottom: 3px;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+}
+h3 {
+	color: #F93;
+	font-size: 24px;
+	margin: 0;
+	margin-top: -5px;
+	font-weight: bold;
+}
+h4 {
+	color: #FC3;
+	font-size: 16px;
+	margin: 0;
+	margin-bottom: 2px;
+}
+h5 {
+	color: #FFF;
+	font-size: 12px;
+	margin: 0;
+	font-weight: bold;
+}
+p {
+	margin: 0 0 5px;
+}
+.desc  {
+	border-bottom: 1px dotted #F60;
+	cursor: help;
+	
+}
+input {
+	color: inherit;
+	font-family: Frutiger, "Myriad Pro", "Segoe UI", Calibri, Tahoma, Verdana, sans-serif;
+}
+#content {
+	margin-top: 200px;
+	text-align: center;
+}
+#container {
+	background: #333;
+	border-radius: 10px;
+	margin: auto;
+	padding: 20px;
+	width: 840px;
+}
+#hexform {
+	text-align: center;
+}
+#hexinput {
+	background: #666;
+	border: none;
+	padding: 0 2px;
+	text-align: center;
+}
+#calc {
+	background: #000;
+	border: none;
+	border-radius: 10px;
+	color: #F60;
+	cursor: pointer;
+	font-family: Frutiger, "Myriad Pro", "Segoe UI", Calibri, Tahoma, Verdana, sans-serif;
+}
+#calc:hover {
+	background: #666;
+}
+#calc:active {
+	background: #F60;
+	color: #333;
+}
+.rl, .gl, .bl {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin: 0;
+	padding: 1px 0 0;
+}
+.rr, .gr, .br {
+	border: 0;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.rl, .rr {
+	background: #F00;
+	color: #000;
+}
+.gl, .gr {
+	background: #0F0;
+	color: #000;
+}
+.bl, .br {
+	background: #00F;
+	color: #FFF;
+}
+#resultsform {
+	text-align: center;
+}
+#resultsform p {
+	margin: 0 0 5px;
+	width: auto;
+}
+#status {
+	background: #000;
+	color: #FFF;
+	border: 0;
+	border-radius: 10px;
+	padding: 0 5px;
+}
