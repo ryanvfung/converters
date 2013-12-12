@@ -1,4 +1,4 @@
-# Converter
+# Converters for HTML/Web
 
 This is the source code for a wide range of JavaScript converters with a UI built on HTML/CSS.
 
